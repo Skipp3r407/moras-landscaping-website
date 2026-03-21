@@ -29,9 +29,9 @@ export function SiteFooter() {
           <Image
             src="/images/logo.png"
             alt={`${business.name} logo`}
-            width={320}
-            height={64}
-            className="h-16 w-auto opacity-90 transition-transform duration-300 hover:scale-105"
+            width={640}
+            height={128}
+            className="h-32 w-auto opacity-90 transition-transform duration-300 hover:scale-105"
           />
         </div>
         <div className="mt-5 space-y-1 text-sm text-white/80">
