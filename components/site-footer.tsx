@@ -29,9 +29,9 @@ export function SiteFooter() {
           <Image
             src="/images/logo.png"
             alt={`${business.name} logo`}
-            width={160}
-            height={32}
-            className="h-8 w-auto opacity-90 transition-transform duration-300 hover:scale-105"
+            width={320}
+            height={64}
+            className="h-16 w-auto opacity-90 transition-transform duration-300 hover:scale-105"
           />
         </div>
         <div className="mt-5 space-y-1 text-sm text-white/80">
@@ -55,7 +55,17 @@ export function SiteFooter() {
       <div className="border-t border-white/10 py-6">
         <div className="container-shell text-center text-xs text-white/70">
           <p>© {new Date().getFullYear()} {business.name}. All rights reserved.</p>
-          <p className="mt-2 text-xs text-gray-500">Website Design by Elevate Digital Co.</p>
+          <p className="mt-6 text-center text-xs text-gray-500">
+            Website Design by{" "}
+            <a
+              href="https://elevatedigitalstudios.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 transition hover:text-blue-300 hover:underline"
+            >
+              Elevate Digital Co.
+            </a>
+          </p>
         </div>
       </div>
     </footer>
