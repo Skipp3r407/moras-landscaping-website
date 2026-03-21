@@ -24,14 +24,14 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-charcoal/90 backdrop-blur-xl">
-      <div className="container-shell flex h-52 items-center justify-between gap-5 sm:h-60">
+      <div className="container-shell flex h-24 items-center justify-between gap-5 md:h-28">
         <Link href="/" aria-label={business.name} className="inline-flex items-center">
           <Image
             src="/images/logo.png"
             alt={`${business.name} logo`}
-            width={1040}
+            width={520}
             height={224}
-            className="h-48 w-auto transition-transform duration-300 hover:scale-105 sm:h-56"
+            className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-105 md:h-24"
             priority
           />
         </Link>
