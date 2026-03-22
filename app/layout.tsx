@@ -36,6 +36,13 @@ export const metadata: Metadata = {
       "Serving Orlando since 2015 with licensed, insured landscaping backed by 25+ years of experience.",
     type: "website",
     locale: "en_US"
+  },
+  icons: {
+    icon: [
+      { url: "/images/favicon.png", type: "image/png", sizes: "64x64" },
+      { url: "/images/favicon.ico" }
+    ],
+    apple: "/images/apple-touch-icon.png"
   }
 };
 
