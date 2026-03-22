@@ -63,7 +63,7 @@ export function SiteFooter() {
               rel="noopener noreferrer"
               className="text-blue-400 transition hover:text-blue-300 hover:underline"
             >
-              Elevate Digital Co.
+              Elevate Digital Studio.
             </a>
           </p>
         </div>
