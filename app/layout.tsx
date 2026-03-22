@@ -68,7 +68,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <SiteHeader />
-        <main className="min-h-screen pb-20 pt-24 md:pb-0 md:pt-28">
+        <main className="min-h-screen pb-20 pt-28 md:pb-0 md:pt-40">
           <PageTransition>{children}</PageTransition>
         </main>
         <SiteFooter />
