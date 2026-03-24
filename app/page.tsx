@@ -89,7 +89,7 @@ export default function HomePage() {
                     src={galleryProjects[0].image}
                     alt={galleryProjects[0].title}
                     fill
-                    className="object-cover transition duration-700 group-hover:scale-105"
+                    className="object-cover transition duration-500 ease-out group-hover:scale-[1.06]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent" />
                   <div className="absolute bottom-5 left-5">
@@ -108,7 +108,7 @@ export default function HomePage() {
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover transition duration-700 group-hover:scale-105"
+                        className="object-cover transition duration-500 ease-out group-hover:scale-[1.06]"
                       />
                     </div>
                     <div className="absolute inset-0 bg-black/25 opacity-0 transition group-hover:opacity-100" />
@@ -120,11 +120,11 @@ export default function HomePage() {
               ))}
             </StaggerReveal>
           </div>
-          <div className="mt-8 text-center">
+          <ScrollReveal variant="fade-up" className="mt-8 text-center">
             <Link href="/gallery" className="btn-primary">
               View Full Gallery
             </Link>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -183,11 +183,11 @@ export default function HomePage() {
               </StaggerItem>
             ))}
           </StaggerReveal>
-          <div className="mt-8 text-center">
+          <ScrollReveal variant="fade-up" className="mt-8 text-center">
             <Link href="/testimonials" className="btn-secondary">
               Read More Reviews
             </Link>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

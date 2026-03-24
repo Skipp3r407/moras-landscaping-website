@@ -1,19 +1,30 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { business } from "@/data/site-content";
+import {
+  fadeUpVariants,
+  footerFadeUpVariants,
+  motionViewport,
+  reducedScrollVariants
+} from "@/lib/motion-variants";
 
 export function SiteFooter() {
   const pathname = usePathname();
+  const reduce = useReducedMotion();
   const isVariantRoute =
     pathname.startsWith("/premium-dark") || pathname.startsWith("/fresh-light");
 
   if (isVariantRoute) {
     return null;
   }
+
+  const mainVariants = reduce ? reducedScrollVariants : footerFadeUpVariants;
+  const legalVariants = reduce ? reducedScrollVariants : fadeUpVariants;
 
   const footerLinks = [
     { href: "/", label: "Home" },
@@ -24,7 +35,13 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-green-900 bg-[#1f4d2b] text-center">
-      <div className="container-shell py-10 text-center">
+      <motion.div
+        className="container-shell py-10 text-center"
+        variants={mainVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={motionViewport}
+      >
         <Image
           src="/images/logo-white.png"
           alt={`${business.name} logo`}
@@ -45,7 +62,7 @@ export function SiteFooter() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="transition duration-300 hover:text-green-300"
+                  className="transition duration-300 hover:scale-[1.03] hover:text-green-300"
                 >
                   {item.label}
                 </Link>
@@ -53,9 +70,15 @@ export function SiteFooter() {
             ))}
           </ul>
         </nav>
-      </div>
+      </motion.div>
 
-      <div className="border-t border-green-900/80 bg-[#163d22] py-6">
+      <motion.div
+        className="border-t border-green-900/80 bg-[#163d22] py-6"
+        variants={legalVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={motionViewport}
+      >
         <div className="container-shell text-center">
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} {business.name}. All rights reserved.
@@ -73,7 +96,7 @@ export function SiteFooter() {
             .
           </p>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

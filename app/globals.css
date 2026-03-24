@@ -20,11 +20,11 @@ body {
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-pine-700 px-6 py-3 font-semibold text-white shadow-glow transition-all duration-300 transform-gpu hover:-translate-y-0.5 hover:scale-105 hover:bg-grass hover:text-charcoal active:scale-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine-700;
+    @apply inline-flex items-center justify-center rounded-full bg-pine-700 px-6 py-3 font-semibold text-white shadow-md transition-all duration-300 transform-gpu hover:-translate-y-0.5 hover:scale-105 hover:bg-grass hover:text-charcoal hover:shadow-lg active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine-700;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-pine-700 bg-white px-6 py-3 font-semibold text-pine-800 transition-all duration-300 transform-gpu hover:-translate-y-0.5 hover:scale-105 hover:border-grass hover:bg-pine-50 hover:text-pine-950 active:scale-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine-700;
+    @apply inline-flex items-center justify-center rounded-full border border-pine-700 bg-white px-6 py-3 font-semibold text-pine-800 shadow-sm transition-all duration-300 transform-gpu hover:-translate-y-0.5 hover:scale-105 hover:border-grass hover:bg-pine-50 hover:text-pine-950 hover:shadow-lg active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine-700;
   }
 
   .section {
@@ -87,11 +87,9 @@ body {
 @keyframes routeEnter {
   from {
     opacity: 0;
-    transform: translateY(8px) scale(0.995);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
   }
 }
 

@@ -2,13 +2,13 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-const viewport = {
-  once: true,
-  amount: 0.1,
-  margin: "0px 0px -10% 0px"
-} as const;
-
-const ease = [0.22, 1, 0.36, 1] as const;
+import {
+  motionViewport,
+  reducedStaggerContainerVariants,
+  reducedStaggerItemVariants,
+  staggerContainerVariants,
+  staggerItemVariants
+} from "@/lib/motion-variants";
 
 type StaggerRevealProps = {
   children: React.ReactNode;
@@ -17,22 +17,15 @@ type StaggerRevealProps = {
 
 export function StaggerReveal({ children, className = "" }: StaggerRevealProps) {
   const reduce = useReducedMotion();
+  const container = reduce ? reducedStaggerContainerVariants : staggerContainerVariants;
 
   return (
     <motion.div
       className={className}
+      variants={container}
       initial="hidden"
-      whileInView="show"
-      viewport={viewport}
-      variants={{
-        hidden: {},
-        show: {
-          transition: {
-            staggerChildren: reduce ? 0 : 0.07,
-            delayChildren: reduce ? 0 : 0.04
-          }
-        }
-      }}
+      whileInView="visible"
+      viewport={motionViewport}
     >
       {children}
     </motion.div>
@@ -46,19 +39,10 @@ type StaggerItemProps = {
 
 export function StaggerItem({ children, className = "" }: StaggerItemProps) {
   const reduce = useReducedMotion();
+  const item = reduce ? reducedStaggerItemVariants : staggerItemVariants;
 
   return (
-    <motion.div
-      className={className}
-      variants={{
-        hidden: reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 },
-        show: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: reduce ? 0 : 0.5, ease }
-        }
-      }}
-    >
+    <motion.div className={className} variants={item}>
       {children}
     </motion.div>
   );

@@ -1,7 +1,15 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useMemo, useState } from "react";
+
+import {
+  reducedStaggerContainerVariants,
+  reducedStaggerItemVariants,
+  staggerContainerVariants,
+  staggerItemVariants
+} from "@/lib/motion-variants";
 
 type GalleryProject = {
   title: string;
@@ -15,6 +23,7 @@ type GalleryLightboxProps = {
 };
 
 export function GalleryLightbox({ projects }: GalleryLightboxProps) {
+  const reduce = useReducedMotion();
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
@@ -39,6 +48,9 @@ export function GalleryLightbox({ projects }: GalleryLightboxProps) {
     setSelectedIndex((selectedIndex - 1 + filteredProjects.length) % filteredProjects.length);
   };
 
+  const container = reduce ? reducedStaggerContainerVariants : staggerContainerVariants;
+  const item = reduce ? reducedStaggerItemVariants : staggerItemVariants;
+
   return (
     <>
       <div className="mb-8 flex flex-wrap gap-2">
@@ -49,8 +61,8 @@ export function GalleryLightbox({ projects }: GalleryLightboxProps) {
             onClick={() => setActiveCategory(category)}
             className={
               activeCategory === category
-                ? "rounded-full border border-pine-700 bg-pine-700 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white transition"
-                : "rounded-full border border-pine-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-pine-800 transition hover:border-pine-500 hover:text-pine-700"
+                ? "rounded-full border border-pine-700 bg-pine-700 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm transition-all duration-300 hover:shadow-md"
+                : "rounded-full border border-pine-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-pine-800 transition-all duration-300 hover:scale-[1.02] hover:border-pine-500 hover:text-pine-700 hover:shadow-sm active:scale-[0.98]"
             }
           >
             {category}
@@ -58,33 +70,44 @@ export function GalleryLightbox({ projects }: GalleryLightboxProps) {
         ))}
       </div>
 
-      <div className="columns-1 gap-4 md:columns-2 xl:columns-3">
+      <motion.div
+        key={activeCategory}
+        className="columns-1 gap-4 md:columns-2 xl:columns-3"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
         {filteredProjects.map((project, index) => (
-          <button
-            key={`${project.title}-${index}`}
-            type="button"
-            onClick={() => openLightbox(index)}
-            className="group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-pine-100 bg-white shadow-sm"
+          <motion.div
+            key={`${project.title}-${index}-${activeCategory}`}
+            variants={item}
+            className="mb-4 break-inside-avoid"
           >
-            <div className="relative h-[280px] w-full">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover transition duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-85" />
-              <div className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-pine-900">
-                {project.category}
+            <button
+              type="button"
+              onClick={() => openLightbox(index)}
+              className="group relative block w-full overflow-hidden rounded-2xl border border-pine-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg"
+            >
+              <div className="relative h-[280px] w-full overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition duration-500 ease-out group-hover:scale-[1.05]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-85 transition duration-300 group-hover:opacity-95" />
+                <div className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-pine-900">
+                  {project.category}
+                </div>
+                <div className="absolute bottom-4 left-4 right-4 text-left">
+                  <p className="text-lg font-bold text-white">{project.title}</p>
+                  <p className="mt-1 text-xs text-white/85">{project.caption}</p>
+                </div>
               </div>
-              <div className="absolute bottom-4 left-4 right-4 text-left">
-                <p className="text-lg font-bold text-white">{project.title}</p>
-                <p className="mt-1 text-xs text-white/85">{project.caption}</p>
-              </div>
-            </div>
-          </button>
+            </button>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {activeProject ? (
         <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm">

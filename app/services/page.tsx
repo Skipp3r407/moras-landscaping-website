@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { ServiceCard } from "@/components/service-card";
 import { StaggerItem, StaggerReveal } from "@/components/stagger-reveal";
 import { services } from "@/data/site-content";
@@ -40,20 +41,24 @@ export default function ServicesPage() {
       </section>
 
       <section className="section bg-earth/40">
-        <div className="container-shell rounded-3xl border border-pine-100 bg-white p-8 shadow-sm">
-          <h2 className="text-3xl font-extrabold text-pine-950">Benefits of Choosing Mora&apos;s Landscaping</h2>
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            {[
-              "Increase property value with professional upgrades",
-              "Improve curb appeal with clean, polished landscaping",
-              "Use low-maintenance options designed for Florida properties"
-            ].map((benefit) => (
-              <div key={benefit} className="rounded-xl border border-pine-100 bg-earth/30 px-4 py-3 text-sm">
-                {benefit}
-              </div>
-            ))}
+        <ScrollReveal variant="fade-up" className="container-shell">
+          <div className="rounded-3xl border border-pine-100 bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
+            <h2 className="text-3xl font-extrabold text-pine-950">Benefits of Choosing Mora&apos;s Landscaping</h2>
+            <StaggerReveal className="mt-6 grid gap-3 sm:grid-cols-3">
+              {[
+                "Increase property value with professional upgrades",
+                "Improve curb appeal with clean, polished landscaping",
+                "Use low-maintenance options designed for Florida properties"
+              ].map((benefit) => (
+                <StaggerItem key={benefit}>
+                  <div className="h-full rounded-xl border border-pine-100 bg-earth/30 px-4 py-3 text-sm transition duration-300 hover:border-grass/40 hover:shadow-sm">
+                    {benefit}
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerReveal>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <CtaBand

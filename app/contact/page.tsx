@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { business } from "@/data/site-content";
 
@@ -21,8 +22,8 @@ export default function ContactPage() {
       />
 
       <section className="section">
-        <div className="container-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="space-y-6">
+        <div className="container-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <ScrollReveal variant="slide-left" className="space-y-6">
             <article className="card">
               <h2 className="text-2xl font-bold text-pine-950">Call for Immediate Assistance</h2>
               <a href={business.phoneHref} className="mt-4 inline-block text-3xl font-extrabold text-pine-700">
@@ -53,27 +54,33 @@ export default function ContactPage() {
                 <li>Sunday: By appointment</li>
               </ul>
             </article>
-          </div>
+          </ScrollReveal>
 
-          <QuoteForm />
+          <ScrollReveal variant="slide-right">
+            <QuoteForm />
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="section bg-earth/40">
         <div className="container-shell">
-          <SectionHeading
-            eyebrow="Map Placeholder"
-            title="Orlando Service Radius"
-            description="Replace this area with an embedded Google Map focused on your service coverage area."
-          />
-          <div className="mt-8 grid h-80 place-items-center rounded-2xl border border-dashed border-pine-300 bg-white text-center">
-            <div className="max-w-md px-4">
-              <p className="text-lg font-semibold text-pine-900">Interactive Map Embed Placeholder</p>
-              <p className="mt-2 text-sm text-charcoal/70">
-                Recommended: embed a map pin for Orlando, FL and mention nearby service areas.
-              </p>
+          <ScrollReveal>
+            <SectionHeading
+              eyebrow="Map Placeholder"
+              title="Orlando Service Radius"
+              description="Replace this area with an embedded Google Map focused on your service coverage area."
+            />
+          </ScrollReveal>
+          <ScrollReveal variant="fade-up" className="mt-8">
+            <div className="grid h-80 place-items-center rounded-2xl border border-dashed border-pine-300 bg-white text-center shadow-sm transition-shadow duration-300 hover:shadow-md">
+              <div className="max-w-md px-4">
+                <p className="text-lg font-semibold text-pine-900">Interactive Map Embed Placeholder</p>
+                <p className="mt-2 text-sm text-charcoal/70">
+                  Recommended: embed a map pin for Orlando, FL and mention nearby service areas.
+                </p>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </>
