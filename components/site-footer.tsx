@@ -23,27 +23,30 @@ export function SiteFooter() {
   ];
 
   return (
-    <footer className="border-t border-white/10 bg-charcoal text-white">
-      <div className="container-shell py-12 text-center">
-        <div className="flex justify-center">
-          <Image
-            src="/images/logo.png"
-            alt={`${business.name} logo`}
-            width={600}
-            height={256}
-            className="h-24 w-auto object-contain opacity-90 transition-transform duration-300 hover:scale-105"
-          />
+    <footer className="border-t border-green-900 bg-[#1f4d2b] text-center">
+      <div className="container-shell py-10 text-center">
+        <Image
+          src="/images/logo-white.png"
+          alt={`${business.name} logo`}
+          width={1536}
+          height={1024}
+          className="mx-auto h-10 w-auto object-contain opacity-95 transition-transform duration-300 hover:scale-105"
+        />
+
+        <div className="mt-4 space-y-1">
+          <p className="font-semibold text-gray-200">{business.name}</p>
+          <p className="text-sm text-gray-400">Orlando, FL</p>
+          <p className="text-sm text-gray-400">Phone: 407-247-4786</p>
         </div>
-        <div className="mt-5 space-y-1 text-sm text-white/80">
-          <p className="font-semibold text-white">{business.name}</p>
-          <p>Orlando, FL</p>
-          <p>Phone: 407-247-4786</p>
-        </div>
-        <nav className="mt-6">
-          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/85">
+
+        <nav className="mt-6" aria-label="Footer navigation">
+          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-200">
             {footerLinks.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="interactive-link transition hover:text-grass">
+                <Link
+                  href={item.href}
+                  className="transition duration-300 hover:text-green-300"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -52,19 +55,22 @@ export function SiteFooter() {
         </nav>
       </div>
 
-      <div className="border-t border-white/10 py-6">
-        <div className="container-shell text-center text-xs text-white/70">
-          <p>© {new Date().getFullYear()} {business.name}. All rights reserved.</p>
-          <p className="mt-6 text-center text-xs text-gray-500">
+      <div className="border-t border-green-900/80 bg-[#163d22] py-6">
+        <div className="container-shell text-center">
+          <p className="text-sm text-gray-400">
+            © {new Date().getFullYear()} {business.name}. All rights reserved.
+          </p>
+          <p className="mt-4 text-xs text-gray-400">
             Website Design by{" "}
             <a
               href="https://elevatedigitalstudios.net/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 transition hover:text-blue-300 hover:underline"
+              className="text-blue-400 transition duration-300 hover:text-blue-300"
             >
-              Elevate Digital Studio.
+              Elevate Digital Studio
             </a>
+            .
           </p>
         </div>
       </div>
