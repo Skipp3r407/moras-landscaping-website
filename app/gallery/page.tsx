@@ -6,6 +6,7 @@ import { GalleryLightbox } from "@/components/gallery-lightbox";
 import { PageHero } from "@/components/page-hero";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
+import { StaggerItem, StaggerReveal } from "@/components/stagger-reveal";
 import { featuredReels, galleryProjects } from "@/data/site-content";
 
 export const metadata: Metadata = {
@@ -47,9 +48,9 @@ export default function GalleryPage() {
               description="Showcase recent work and before/after highlights through project reels."
             />
           </ScrollReveal>
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
+          <StaggerReveal className="mt-8 grid gap-5 md:grid-cols-2">
             {featuredReels.map((reel) => (
-              <ScrollReveal key={reel.url}>
+              <StaggerItem key={reel.url}>
                 <article className="card">
                   <div className="relative h-52 overflow-hidden rounded-xl">
                     <Image src={reel.thumbnail} alt={reel.title} fill className="object-cover" />
@@ -67,9 +68,9 @@ export default function GalleryPage() {
                     Watch on Facebook
                   </a>
                 </article>
-              </ScrollReveal>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 

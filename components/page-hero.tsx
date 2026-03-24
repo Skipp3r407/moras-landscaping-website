@@ -1,4 +1,10 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+
 import { business } from "@/data/site-content";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 type PageHeroProps = {
   title: string;
@@ -7,10 +13,18 @@ type PageHeroProps = {
 };
 
 export function PageHero({ title, description, keywordLine }: PageHeroProps) {
+  const reduce = useReducedMotion();
+  const initial = reduce ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 };
+
   return (
     <section className="bg-earth/40 pt-28">
       <div className="container-shell section">
-        <div className="max-w-4xl fade-in-up">
+        <motion.div
+          className="max-w-4xl"
+          initial={initial}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: reduce ? 0 : 0.55, ease }}
+        >
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pine-700">
             {business.name} | Orlando, FL
           </p>
@@ -23,7 +37,7 @@ export function PageHero({ title, description, keywordLine }: PageHeroProps) {
               {keywordLine}
             </p>
           ) : null}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

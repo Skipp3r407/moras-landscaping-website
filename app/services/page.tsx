@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
-import { ScrollReveal } from "@/components/scroll-reveal";
 import { ServiceCard } from "@/components/service-card";
+import { StaggerItem, StaggerReveal } from "@/components/stagger-reveal";
 import { services } from "@/data/site-content";
 
 export const metadata: Metadata = {
@@ -22,18 +22,20 @@ export default function ServicesPage() {
       />
 
       <section className="section">
-        <div className="container-shell grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
-            <ScrollReveal key={service.id}>
-              <ServiceCard
-                icon={service.icon}
-                title={service.title}
-                short={service.short}
-                benefits={service.benefits}
-                useCases={service.useCases}
-              />
-            </ScrollReveal>
-          ))}
+        <div className="container-shell">
+          <StaggerReveal className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {services.map((service) => (
+              <StaggerItem key={service.id}>
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  short={service.short}
+                  benefits={service.benefits}
+                  useCases={service.useCases}
+                />
+              </StaggerItem>
+            ))}
+          </StaggerReveal>
         </div>
       </section>
 

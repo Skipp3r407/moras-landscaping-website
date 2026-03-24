@@ -24,7 +24,7 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="container-shell grid gap-8 lg:grid-cols-2">
-          <ScrollReveal>
+          <ScrollReveal variant="slide-left">
             <article className="card">
               <h2 className="text-2xl font-bold text-pine-950">Our Story</h2>
               <p className="mt-4 text-charcoal/80">
@@ -40,7 +40,7 @@ export default function AboutPage() {
             </article>
           </ScrollReveal>
 
-          <ScrollReveal>
+          <ScrollReveal variant="slide-right">
             <article className="card">
               <h2 className="text-2xl font-bold text-pine-950">Mission Statement</h2>
               <p className="mt-4 text-charcoal/80">

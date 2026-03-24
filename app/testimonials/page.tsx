@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
-import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
+import { ScrollReveal } from "@/components/scroll-reveal";
+import { StaggerItem, StaggerReveal } from "@/components/stagger-reveal";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { testimonialSamples } from "@/data/site-content";
 
@@ -31,13 +32,13 @@ export default function TestimonialsPage() {
               description="These testimonials highlight the professionalism and consistency clients value most."
             />
           </ScrollReveal>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <StaggerReveal className="mt-10 grid gap-5 md:grid-cols-2">
             {testimonialSamples.map((testimonial) => (
-              <ScrollReveal key={testimonial.name + testimonial.location}>
-                <TestimonialCard key={testimonial.name + testimonial.location} {...testimonial} />
-              </ScrollReveal>
+              <StaggerItem key={testimonial.name + testimonial.location}>
+                <TestimonialCard {...testimonial} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 
