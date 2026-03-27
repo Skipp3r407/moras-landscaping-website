@@ -9,14 +9,14 @@ import { business } from "@/data/site-content";
 
 type Message = { id: string; role: "user" | "bot"; text: string };
 
-/** Brand lawn mower mark — matches header / footer (`logo-mower.png`) */
-function MowerBrandIcon({ className }: { className?: string }) {
+/** Same asset as `SiteHeader` — white wordmark on green */
+function ChatHeaderLogo({ className }: { className?: string }) {
   return (
     <Image
-      src="/images/logo-mower.png"
+      src="/images/logo-white.png"
       alt=""
-      width={120}
-      height={139}
+      width={1536}
+      height={1024}
       className={className}
     />
   );
@@ -104,8 +104,8 @@ export function ChatWidget() {
         }`}
       >
         <div className="flex items-center gap-3 border-b border-green-900/15 bg-[#1f4d2b] px-4 py-3 text-white">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white/15 p-1">
-            <MowerBrandIcon className="h-full w-full object-contain object-center" />
+          <div className="flex h-10 max-w-[5.5rem] shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white/15 px-1.5 py-1">
+            <ChatHeaderLogo className="h-7 w-auto max-w-full object-contain object-left" />
           </div>
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold">Mora&apos;s Landscaping</p>
@@ -180,12 +180,12 @@ export function ChatWidget() {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full border-2 border-green-400/50 bg-[#1f4d2b] text-white shadow-lg transition duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
+        className="pointer-events-auto flex h-12 max-w-[min(92vw,11rem)] items-center justify-center rounded-full border-2 border-green-400/50 bg-[#1f4d2b] px-3 py-2 text-white shadow-lg transition duration-300 hover:scale-105 hover:shadow-xl active:scale-95 sm:h-14 sm:max-w-[13rem] sm:px-3.5"
         aria-expanded={open}
         aria-controls={panelId}
         aria-label={open ? "Close chat" : "Open chat — Lawn care assistant"}
       >
-        <MowerBrandIcon className="h-9 w-9 object-contain" />
+        <ChatHeaderLogo className="h-8 w-auto max-w-full object-contain object-center sm:h-9" />
       </button>
     </div>
   );
