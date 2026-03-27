@@ -83,12 +83,23 @@ export function SiteFooter() {
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} {business.name}. All rights reserved.
           </p>
-          <p className="mt-4 text-xs">
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="border-t border-white/5 bg-[#1a1a1a] py-4"
+        variants={legalVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={motionViewport}
+      >
+        <div className="container-shell text-center">
+          <p className="text-xs font-medium tracking-wide text-gray-200/95">
             <a
               href="https://elevatedigitalstudios.net/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 transition duration-300 hover:text-blue-300 hover:underline"
+              className="inline-block transition duration-300 [text-shadow:0_0_1px_rgba(34,211,238,0.45),0_0_20px_rgba(34,211,238,0.12)] hover:text-white hover:[text-shadow:0_0_2px_rgba(34,211,238,0.55),0_0_24px_rgba(34,211,238,0.18)]"
             >
               Website Design by Elevate Digital Studio.
             </a>

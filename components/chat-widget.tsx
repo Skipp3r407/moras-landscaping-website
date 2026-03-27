@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
@@ -8,40 +9,16 @@ import { business } from "@/data/site-content";
 
 type Message = { id: string; role: "user" | "bot"; text: string };
 
-function GrassMowerIcon({ className }: { className?: string }) {
+/** Brand lawn mower mark — matches header / footer (`logo-mower.png`) */
+function MowerBrandIcon({ className }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 64 64"
+    <Image
+      src="/images/logo-mower.png"
+      alt=""
+      width={120}
+      height={139}
       className={className}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      {/* Grass blades */}
-      <path
-        d="M6 52 L10 36 L14 52 M12 52 L16 38 L20 52 M18 52 L22 40 L26 52 M24 52 L28 42 L32 52"
-        stroke="#86efac"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M4 52h22" stroke="#4ade80" strokeWidth="2" strokeLinecap="round" opacity="0.85" />
-      {/* Mower body */}
-      <rect x="28" y="36" width="28" height="12" rx="2.5" fill="#f8fafc" />
-      <rect x="30" y="38" width="24" height="8" rx="1.5" fill="#15803d" />
-      {/* Wheels */}
-      <circle cx="36" cy="52" r="5" fill="#27272a" />
-      <circle cx="36" cy="52" r="2" fill="#71717a" />
-      <circle cx="54" cy="52" r="5" fill="#27272a" />
-      <circle cx="54" cy="52" r="2" fill="#71717a" />
-      {/* Engine / deck */}
-      <rect x="40" y="34" width="10" height="6" rx="1" fill="#14532d" />
-      {/* Handle */}
-      <path d="M54 36 L60 24" stroke="#3f3f46" strokeWidth="2.2" strokeLinecap="round" />
-      <circle cx="60" cy="22" r="2.5" fill="#52525b" />
-      {/* Tiny grass clip */}
-      <path d="M32 52 L34 48 L36 52" stroke="#86efac" strokeWidth="1.5" strokeLinecap="round" opacity="0.8" />
-    </svg>
+    />
   );
 }
 
@@ -127,8 +104,8 @@ export function ChatWidget() {
         }`}
       >
         <div className="flex items-center gap-3 border-b border-green-900/15 bg-[#1f4d2b] px-4 py-3 text-white">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15">
-            <GrassMowerIcon className="h-7 w-7" />
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white/15 p-1">
+            <MowerBrandIcon className="h-full w-full object-contain object-center" />
           </div>
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold">Mora&apos;s Landscaping</p>
@@ -208,7 +185,7 @@ export function ChatWidget() {
         aria-controls={panelId}
         aria-label={open ? "Close chat" : "Open chat — Lawn care assistant"}
       >
-        <GrassMowerIcon className="h-8 w-8" />
+        <MowerBrandIcon className="h-9 w-9 object-contain" />
       </button>
     </div>
   );
