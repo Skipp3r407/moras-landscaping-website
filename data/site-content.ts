@@ -145,6 +145,26 @@ export const galleryProjects = [
   }
 ];
 
+/** Home page strip below the header — lawn care & healthy turf from real projects */
+export const lawnMaintenanceShowcase = [
+  {
+    src: "/images/projects/fb-2.jpg",
+    alt: "Maintained front lawn and landscape beds with crisp bed lines"
+  },
+  {
+    src: "/images/projects/fb-4.jpg",
+    alt: "Healthy irrigated lawn and turf care"
+  },
+  {
+    src: "/images/projects/fb-6.jpg",
+    alt: "Professional landscape cleanup and refreshed lawn areas"
+  },
+  {
+    src: "/images/projects/fb-3.jpg",
+    alt: "Well-kept backyard lawn and landscape design"
+  }
+];
+
 export const testimonialSamples = [
   {
     name: "S. Alvarez",

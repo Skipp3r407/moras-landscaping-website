@@ -94,12 +94,12 @@ export default function AppLoadingScreen() {
       }}
     >
       <div className="flex max-w-md flex-col items-center px-6 text-center">
-        <div className="relative mb-8 h-16 w-48 sm:h-20 sm:w-56">
+        <div className="relative mb-8 h-20 w-20 sm:h-24 sm:w-24">
           <Image
-            src="/images/logo-white.png"
-            alt={`${business.name} logo`}
+            src="/images/logo-mower.png"
+            alt={`${business.name} — lawn care logo`}
             fill
-            className="object-contain"
+            className="object-contain drop-shadow-lg"
             priority
           />
         </div>

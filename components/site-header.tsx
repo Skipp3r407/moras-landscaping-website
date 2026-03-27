@@ -37,10 +37,10 @@ export function SiteHeader() {
       <div className="container-shell flex min-h-[11rem] items-center justify-between gap-5 py-2 md:min-h-[18rem] md:py-4">
         <Link href="/" aria-label={business.name} className="flex items-center shrink-0 pl-1 sm:pl-2">
           <Image
-            src="/images/logo-white.png"
-            alt={`${business.name} logo`}
-            width={1536}
-            height={1024}
+            src="/images/logo-mower.png"
+            alt={`${business.name} — lawn care logo`}
+            width={342}
+            height={396}
             className="h-40 md:h-64 w-auto object-contain shrink-0 transition-transform duration-300 hover:scale-105"
             priority
           />

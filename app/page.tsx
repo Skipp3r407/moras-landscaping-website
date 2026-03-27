@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { CtaBand } from "@/components/cta-band";
 import { HomeHero } from "@/components/home-hero";
+import { LawnMaintenanceStrip } from "@/components/lawn-maintenance-strip";
 import { QuoteForm } from "@/components/quote-form";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <LawnMaintenanceStrip />
       <HomeHero />
 
       <section className="section section-band bg-white">

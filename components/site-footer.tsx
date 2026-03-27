@@ -43,10 +43,10 @@ export function SiteFooter() {
         viewport={motionViewport}
       >
         <Image
-          src="/images/logo-white.png"
-          alt={`${business.name} logo`}
-          width={1536}
-          height={1024}
+          src="/images/logo-mower.png"
+          alt={`${business.name} — lawn care logo`}
+          width={171}
+          height={198}
           className="mx-auto h-10 w-auto object-contain opacity-95 transition-transform duration-300 hover:scale-105"
         />
 
