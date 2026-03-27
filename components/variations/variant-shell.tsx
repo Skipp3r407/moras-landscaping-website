@@ -109,9 +109,8 @@ export function VariantShell({ mode, basePath, children }: VariantShellProps) {
             <div className={dark ? "text-sm text-zinc-400" : "text-sm text-gray-500"}>
               <p>© {new Date().getFullYear()} {business.name}. All rights reserved.</p>
               <p className="mt-3">
-                Website Design by{" "}
                 <a
-                  href="https://elevatedigitalstudios.net"
+                  href="https://elevatedigitalstudios.net/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={
@@ -120,7 +119,7 @@ export function VariantShell({ mode, basePath, children }: VariantShellProps) {
                       : "group relative font-medium text-gray-600 transition duration-300 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-purple-500 hover:bg-clip-text hover:text-transparent hover:drop-shadow-[0_0_6px_rgba(56,189,248,0.4)]"
                   }
                 >
-                  Elevate Digital Studio.
+                  Website Design by Elevate Digital Studio.
                   <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </p>

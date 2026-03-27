@@ -19,13 +19,13 @@ export function CtaBand({ title, text }: CtaBandProps) {
     <section className="section">
       <div className="container-shell">
         <motion.div
-          className="rounded-3xl bg-pine-900 p-8 text-white shadow-xl sm:p-12"
+          className="rounded-[1.75rem] bg-pine-900 p-8 text-white shadow-xl ring-1 ring-white/10 sm:p-12 lg:p-14"
           variants={variants}
           initial="hidden"
           whileInView="visible"
           viewport={motionViewport}
         >
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-grass">
                 Licensed & Insured Landscaping Experts

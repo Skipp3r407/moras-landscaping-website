@@ -83,17 +83,15 @@ export function SiteFooter() {
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} {business.name}. All rights reserved.
           </p>
-          <p className="mt-4 text-xs text-gray-400">
-            Website Design by{" "}
+          <p className="mt-4 text-xs">
             <a
               href="https://elevatedigitalstudios.net/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 transition duration-300 hover:text-blue-300"
+              className="text-blue-400 transition duration-300 hover:text-blue-300 hover:underline"
             >
-              Elevate Digital Studio
+              Website Design by Elevate Digital Studio.
             </a>
-            .
           </p>
         </div>
       </motion.div>

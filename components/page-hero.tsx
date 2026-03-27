@@ -22,7 +22,7 @@ export function PageHero({ title, description, keywordLine }: PageHeroProps) {
   const itemVariants = reduce ? reducedStaggerItemVariants : staggerItemVariants;
 
   return (
-    <section className="bg-earth/40 pt-28">
+    <section className="border-b border-pine-100/60 bg-earth/40 pt-28">
       <div className="container-shell section">
         <motion.div
           className="max-w-4xl"
@@ -38,11 +38,11 @@ export function PageHero({ title, description, keywordLine }: PageHeroProps) {
           </motion.p>
           <motion.h1
             variants={itemVariants}
-            className="mt-3 text-4xl font-extrabold tracking-tight text-pine-950 sm:text-5xl"
+            className="mt-3 text-balance text-4xl font-extrabold tracking-tight text-pine-950 sm:text-5xl"
           >
             {title}
           </motion.h1>
-          <motion.p variants={itemVariants} className="mt-5 text-lg text-charcoal/80">
+          <motion.p variants={itemVariants} className="mt-5 max-w-3xl text-lg leading-relaxed text-charcoal/80">
             {description}
           </motion.p>
           {keywordLine ? (

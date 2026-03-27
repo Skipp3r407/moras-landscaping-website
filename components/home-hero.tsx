@@ -42,7 +42,7 @@ export function HomeHero() {
       </div>
       <div className="container-shell relative section">
         <motion.div
-          className="max-w-3xl text-white"
+          className="max-w-3xl text-white lg:max-w-[42rem]"
           variants={copyContainer}
           initial="hidden"
           animate="visible"
@@ -55,11 +55,11 @@ export function HomeHero() {
           </motion.p>
           <motion.h1
             variants={itemVariants}
-            className="mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl"
+            className="mt-4 text-balance text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl lg:leading-[1.08]"
           >
             Transform Your Outdoor Space with Expert Landscaping
           </motion.h1>
-          <motion.p variants={itemVariants} className="mt-5 text-lg text-white/90">
+          <motion.p variants={itemVariants} className="mt-5 max-w-2xl text-lg leading-relaxed text-white/90">
             Serving Orlando since 2015 - trusted, licensed, and built on over 25 years of experience.
           </motion.p>
           <motion.div variants={itemVariants} className="mt-8 flex flex-wrap gap-3">

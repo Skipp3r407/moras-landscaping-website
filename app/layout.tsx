@@ -78,7 +78,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <AppLoadingScreen />
         <SiteHeader />
-        <main className="min-h-screen pb-20 pt-52 md:pb-0 md:pt-72">
+        <main className="relative isolate min-h-screen overflow-x-clip pb-24 pt-52 md:pb-0 md:pt-72">
           <PageTransition>{children}</PageTransition>
         </main>
         <SiteFooter />

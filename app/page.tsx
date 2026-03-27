@@ -25,16 +25,17 @@ export default function HomePage() {
     <>
       <HomeHero />
 
-      <section className="section bg-white">
+      <section className="section section-band bg-white">
         <div className="container-shell">
           <ScrollReveal>
             <SectionHeading
+              center
               eyebrow="Our Services"
               title="Professional Landscaping Services in Orlando"
               description="From routine lawn care to full installations, we deliver high-quality work built for Florida properties."
             />
           </ScrollReveal>
-          <StaggerReveal className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <StaggerReveal className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
             {services.map((service) => (
               <StaggerItem key={service.id}>
                 <ServiceCard
@@ -54,12 +55,13 @@ export default function HomePage() {
         <div className="container-shell">
           <ScrollReveal>
             <SectionHeading
+              center
               eyebrow="Why Choose Us"
               title="Trusted Landscaping with Proven Local Experience"
               description="Mora's Landscaping combines craftsmanship, reliability, and deep Orlando roots to deliver premium outdoor results."
             />
           </ScrollReveal>
-          <StaggerReveal className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <StaggerReveal className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {whyChooseUs.map((point) => (
               <StaggerItem key={point}>
                 <article className="card h-full">
@@ -72,16 +74,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section section-band bg-white">
         <div className="container-shell">
           <ScrollReveal>
             <SectionHeading
+              center
               eyebrow="Gallery Preview"
               title="Real Landscaping Transformations"
               description="A portfolio-driven showcase to build trust and demonstrate quality workmanship."
             />
           </ScrollReveal>
-          <div className="mt-10 grid gap-4 lg:grid-cols-[1.2fr_1fr]">
+          <div className="mt-12 grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:gap-8 lg:items-start">
             <ScrollReveal variant="slide-left">
               <article className="group relative overflow-hidden rounded-3xl border border-pine-100 shadow-lg">
                 <div className="relative h-[360px]">
@@ -99,7 +102,7 @@ export default function HomePage() {
                 </div>
               </article>
             </ScrollReveal>
-            <StaggerReveal className="grid gap-4 sm:grid-cols-2">
+            <StaggerReveal className="grid gap-4 sm:grid-cols-2 sm:gap-5">
               {galleryProjects.slice(1, 5).map((project) => (
                 <StaggerItem key={project.title}>
                   <article className="group relative overflow-hidden rounded-2xl border border-pine-100 shadow-sm">
@@ -120,7 +123,7 @@ export default function HomePage() {
               ))}
             </StaggerReveal>
           </div>
-          <ScrollReveal variant="fade-up" className="mt-8 text-center">
+          <ScrollReveal variant="fade-up" className="mt-10 text-center">
             <Link href="/gallery" className="btn-primary">
               View Full Gallery
             </Link>
@@ -129,7 +132,7 @@ export default function HomePage() {
       </section>
 
       <section className="section bg-earth/50">
-        <div className="container-shell grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+        <div className="container-shell grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-stretch lg:gap-12">
           <ScrollReveal variant="slide-left">
             <article className="card">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-pine-700">About Preview</p>
@@ -162,16 +165,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-earth/50">
+      <section className="section section-band bg-white">
         <div className="container-shell">
           <ScrollReveal>
             <SectionHeading
+              center
               eyebrow="Testimonials"
               title="What Local Clients Say"
               description="Homeowners across Orlando trust our team for reliability, professionalism, and quality results."
             />
           </ScrollReveal>
-          <StaggerReveal className="mt-8 grid gap-5 md:grid-cols-3">
+          <StaggerReveal className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
             {testimonialSamples.slice(0, 3).map((item) => (
               <StaggerItem key={item.name + item.location}>
                 <TestimonialCard
@@ -183,7 +187,7 @@ export default function HomePage() {
               </StaggerItem>
             ))}
           </StaggerReveal>
-          <ScrollReveal variant="fade-up" className="mt-8 text-center">
+          <ScrollReveal variant="fade-up" className="mt-10 text-center">
             <Link href="/testimonials" className="btn-secondary">
               Read More Reviews
             </Link>
@@ -196,8 +200,8 @@ export default function HomePage() {
         text="Get your free quote today and let Mora's Landscaping bring your outdoor vision to life."
       />
 
-      <section className="section bg-white">
-        <div className="container-shell grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <section className="section bg-earth/30">
+        <div className="container-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:gap-12">
           <ScrollReveal variant="slide-left">
             <article className="card">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-pine-700">Contact</p>
