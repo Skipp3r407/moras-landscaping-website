@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 
+import AppLoadingScreen from "@/components/app-loading-screen";
+import { ChatWidget } from "@/components/chat-widget";
 import { MobileCallBar } from "@/components/mobile-call-bar";
 import { PageTransition } from "@/components/page-transition";
 import { SiteFooter } from "@/components/site-footer";
@@ -74,11 +76,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <AppLoadingScreen />
         <SiteHeader />
         <main className="min-h-screen pb-20 pt-52 md:pb-0 md:pt-72">
           <PageTransition>{children}</PageTransition>
         </main>
         <SiteFooter />
+        <ChatWidget />
         <MobileCallBar />
       </body>
     </html>
