@@ -42,13 +42,15 @@ export function SiteFooter() {
         whileInView="visible"
         viewport={motionViewport}
       >
-        <Image
-          src="/images/logo-mower.png"
-          alt={`${business.name} — lawn care logo`}
-          width={171}
-          height={198}
-          className="mx-auto h-10 w-auto object-contain opacity-95 transition-transform duration-300 hover:scale-105"
-        />
+        <Link href="/" className="mx-auto inline-block" aria-label={business.name}>
+          <Image
+            src="/images/logo-white.png"
+            alt={`${business.name} logo`}
+            width={1536}
+            height={1024}
+            className="h-36 w-auto max-w-[min(100%,60rem)] object-contain opacity-95 transition-transform duration-300 hover:scale-105 sm:h-[10.5rem]"
+          />
+        </Link>
 
         <div className="mt-4 space-y-1">
           <p className="font-semibold text-gray-200">{business.name}</p>
