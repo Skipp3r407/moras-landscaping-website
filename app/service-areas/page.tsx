@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
 import { ServiceAreaList } from "@/components/service-area-list";
-import { serviceAreas } from "@/data/site-content";
+import { innerPageHeroImages, serviceAreas } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Service Areas",
@@ -15,6 +15,7 @@ export default function ServiceAreasPage() {
   return (
     <>
       <PageHero
+        heroImage={innerPageHeroImages.serviceAreas}
         title="Service Areas Around Orlando, Florida"
         description="Mora's Landscaping LLC serves homeowners and small commercial clients throughout Orlando and nearby Central Florida communities."
         keywordLine="Contact us to confirm service availability in your area."

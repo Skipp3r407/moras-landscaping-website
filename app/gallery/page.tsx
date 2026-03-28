@@ -7,7 +7,7 @@ import { PageHero } from "@/components/page-hero";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { StaggerItem, StaggerReveal } from "@/components/stagger-reveal";
-import { featuredReels, galleryProjects } from "@/data/site-content";
+import { featuredReels, galleryProjects, innerPageHeroImages } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Gallery Projects",
@@ -19,6 +19,7 @@ export default function GalleryPage() {
   return (
     <>
       <PageHero
+        heroImage={innerPageHeroImages.gallery}
         title="Gallery: Outdoor Transformations by Mora's Landscaping LLC"
         description="See real landscaping projects across Orlando, with before-and-after style visuals designed to showcase quality and craftsmanship."
         keywordLine="Landscape design Orlando | Landscape installation Orlando | Artificial turf and cleanup project gallery"

@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { StaggerItem, StaggerReveal } from "@/components/stagger-reveal";
 import { TestimonialCard } from "@/components/testimonial-card";
-import { testimonialSamples } from "@/data/site-content";
+import { innerPageHeroImages, testimonialSamples } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Testimonials",
@@ -18,6 +18,7 @@ export default function TestimonialsPage() {
   return (
     <>
       <PageHero
+        heroImage={innerPageHeroImages.testimonials}
         title="Testimonials and Client Feedback"
         description="See how Orlando homeowners describe their experience working with Mora's Landscaping."
         keywordLine="Reliability, communication, craftsmanship, and professional landscape results"

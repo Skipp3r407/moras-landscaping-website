@@ -5,7 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { ServiceCard } from "@/components/service-card";
 import { StaggerItem, StaggerReveal } from "@/components/stagger-reveal";
-import { services } from "@/data/site-content";
+import { innerPageHeroImages, services } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -17,6 +17,7 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
+        heroImage={innerPageHeroImages.services}
         title="Landscaping Services in Orlando, Florida"
         description="Professional outdoor services built to improve curb appeal, increase property value, and deliver long-term landscape performance."
         keywordLine="Lawn maintenance Orlando | Landscape design | Irrigation, turf, cleanup, and installation"

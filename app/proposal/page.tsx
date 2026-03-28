@@ -5,7 +5,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
 import { SectionHeading } from "@/components/section-heading";
-import { business, galleryProjects, navLinks, services } from "@/data/site-content";
+import { business, galleryProjects, innerPageHeroImages, navLinks, services } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Client Preview Proposal",
@@ -69,6 +69,7 @@ export default function ProposalPage() {
       </section>
 
       <PageHero
+        heroImage={innerPageHeroImages.proposal}
         title="Professional Landscaping Services That Transform Outdoor Spaces"
         description="Website concept for Mora's Landscaping LLC: a premium, lead-focused Orlando landscaping brand presence highlighting licensed and insured service, lawn care, design, installs, irrigation, artificial turf, and hardscapes."
         keywordLine="Proposal Goal: Impress the client, build trust quickly, and convert visitors into estimate requests."

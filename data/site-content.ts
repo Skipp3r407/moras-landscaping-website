@@ -165,6 +165,42 @@ export const lawnMaintenanceShowcase = [
   }
 ];
 
+/** Full-bleed hero backgrounds for inner pages — real project photos */
+export const innerPageHeroImages = {
+  about: {
+    src: galleryProjects[1].image,
+    alt: `${galleryProjects[1].title} — Orlando landscaping project`
+  },
+  services: {
+    src: galleryProjects[0].image,
+    alt: `${galleryProjects[0].title} — Orlando landscaping project`
+  },
+  contact: {
+    src: galleryProjects[2].image,
+    alt: `${galleryProjects[2].title} — Orlando landscaping project`
+  },
+  gallery: {
+    src: galleryProjects[4].image,
+    alt: `${galleryProjects[4].title} — Orlando landscaping project`
+  },
+  testimonials: {
+    src: galleryProjects[3].image,
+    alt: `${galleryProjects[3].title} — Orlando landscaping project`
+  },
+  faq: {
+    src: galleryProjects[2].image,
+    alt: `${galleryProjects[2].title} — Orlando landscaping project`
+  },
+  serviceAreas: {
+    src: galleryProjects[5].image,
+    alt: `${galleryProjects[5].title} — Orlando landscaping project`
+  },
+  proposal: {
+    src: galleryProjects[0].image,
+    alt: `${galleryProjects[0].title} — Orlando landscaping project`
+  }
+} as const;
+
 export const testimonialSamples = [
   {
     name: "S. Alvarez",

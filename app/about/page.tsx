@@ -5,7 +5,7 @@ import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { ScrollReveal } from "@/components/scroll-reveal";
-import { business } from "@/data/site-content";
+import { business, innerPageHeroImages } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -17,6 +17,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        heroImage={innerPageHeroImages.about}
         title="About Mora's Landscaping LLC"
         description="A local Orlando landscaping company delivering premium outdoor transformations with dependable service and craftsmanship."
         keywordLine="Serving Central Florida since 2015 | 25+ years experience | Licensed and insured"

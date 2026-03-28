@@ -4,7 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { business } from "@/data/site-content";
+import { business, innerPageHeroImages } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -16,6 +16,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
+        heroImage={innerPageHeroImages.contact}
         title="Contact Mora's Landscaping LLC"
         description="Call or send your project details for a fast landscaping quote. We serve Orlando and surrounding Central Florida communities."
         keywordLine="Fast quote for lawn maintenance, landscape installation, design, irrigation, turf, and cleanup services"

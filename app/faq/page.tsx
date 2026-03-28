@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { CtaBand } from "@/components/cta-band";
 import { FaqList } from "@/components/faq-list";
 import { PageHero } from "@/components/page-hero";
-import { faqItems } from "@/data/site-content";
+import { faqItems, innerPageHeroImages } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -15,6 +15,7 @@ export default function FaqPage() {
   return (
     <>
       <PageHero
+        heroImage={innerPageHeroImages.faq}
         title="Frequently Asked Questions"
         description="Answers to common questions about our Orlando landscaping services, estimates, and scheduling."
         keywordLine="Lawn maintenance Orlando | Landscape design | Irrigation and cleanup FAQ"
